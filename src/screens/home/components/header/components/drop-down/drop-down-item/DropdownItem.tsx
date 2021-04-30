@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, Dimensions } from "react-native";
-import { View } from "react-native";
+import { StyleSheet, Text, Dimensions, TouchableOpacity } from "react-native";
+import { setCategory } from "../../../../../../../redux/foodCategorySlice";
+import { useAppDispatch } from "../../../../../../../redux/hooks";
 
 export const LIST_ITEM_HEIGHT = 40;
 
@@ -10,6 +11,7 @@ interface DropdownItemProps {
   category: string;
   isLast: boolean;
   isFirst: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const styles = StyleSheet.create({
@@ -29,12 +31,19 @@ const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   category,
   isLast,
   isFirst,
+  setShowModal,
 }): JSX.Element => {
   const bottomRadius = isLast ? 9 : 0;
   const topRadius = isFirst ? 9 : 0;
 
+  const dispatch = useAppDispatch();
+
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => {
+        dispatch(setCategory(category));
+        setShowModal(false);
+      }}
       style={[
         styles.item,
         {
@@ -45,7 +54,7 @@ const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         },
       ]}>
       <Text>{category}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

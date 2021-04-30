@@ -1,8 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { Platform, NativeModules } from "react-native";
 const { StatusBarManager } = NativeModules;
 
 const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBarManager.HEIGHT;
+
+const WINDOW_WIDTH = Dimensions.get("window").width;
+const WINDOW_HEIGHT = Dimensions.get("window").height;
 
 export default StyleSheet.create({
   centered: {
@@ -13,13 +16,12 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerWrapper: {
-    paddingTop: STATUSBAR_HEIGHT,
-    flex: 0.5,
+    height: 0.1 * WINDOW_HEIGHT,
   },
   foodListWrapper: {
-    flex: 5,
+    height: 0.8 * WINDOW_HEIGHT,
   },
   navigationWrapper: {
-    flex: 0.5,
+    height: 0.1 * WINDOW_HEIGHT,
   },
 });
