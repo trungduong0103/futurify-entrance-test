@@ -8,7 +8,10 @@ const ApplicationStack = createStackNavigator();
 const App = (): JSX.Element => {
   return (
     <NavigationContainer>
-      <ApplicationStack.Navigator>
+      <ApplicationStack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
         <ApplicationStack.Screen name="Home" component={Home} />
       </ApplicationStack.Navigator>
     </NavigationContainer>
