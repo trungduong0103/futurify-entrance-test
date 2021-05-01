@@ -29,11 +29,6 @@ const FoodList: React.FunctionComponent<FoodListProps> = ({
     <SafeAreaView style={[styles.listWrapper]}>
       {gridView ? (
         <FlatList
-          removeClippedSubviews={true} // Unmount components when outside of window
-          initialNumToRender={2} // Reduce initial render amount
-          maxToRenderPerBatch={1} // Reduce number in each render batch
-          updateCellsBatchingPeriod={100} // Increase time between renders
-          windowSize={7}
           key="#"
           data={foodItems}
           style={[styles.listWrapper]}
@@ -64,7 +59,6 @@ const styles = StyleSheet.create({
   columnView: {
     flexDirection: "column",
   },
-  gridView: {},
 });
 
 export default FoodList;

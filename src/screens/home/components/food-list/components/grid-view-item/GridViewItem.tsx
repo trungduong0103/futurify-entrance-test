@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     flex: 3,
+    paddingLeft: 10,
     paddingTop: 10,
     justifyContent: "flex-start",
-    alignItems: "center",
   },
   image: {
     height: WINDOW_HEIGHT * 0.25,

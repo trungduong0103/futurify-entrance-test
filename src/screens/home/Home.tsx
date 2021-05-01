@@ -8,17 +8,17 @@ import styles from "./HomeStyle";
 import FOOD_LIST, { FoodItem } from "../../mock-data/MockFoodList";
 
 const Home: React.FunctionComponent = (): JSX.Element => {
-  const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>([]);
+  const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>(FOOD_LIST);
   const [gridView, setGridView] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
 
-  useEffect(() => {
-    const filteredFood = FOOD_LIST.filter(
-      food => food.category === "Main Plates",
-    );
-    setFoodByCategory(filteredFood);
-  }, []);
+  // useEffect(() => {
+  //   const filteredFood = FOOD_LIST.filter(
+  //     food => food.category === "Main Plates",
+  //   );
+  //   setFoodByCategory(filteredFood);
+  // }, []);
 
   return (
     <View style={styles.container}>

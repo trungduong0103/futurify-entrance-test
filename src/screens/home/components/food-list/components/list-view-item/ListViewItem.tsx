@@ -27,7 +27,6 @@ const ListViewItem: React.FunctionComponent<ListViewItemProps> = ({
   return (
     <TouchableWithoutFeedback
       onPress={() => {
-        console.log("hey");
         Keyboard.dismiss;
         setSearch(false);
       }}>
@@ -43,7 +42,7 @@ const ListViewItem: React.FunctionComponent<ListViewItemProps> = ({
                 <Text style={styles.foodName}>{foodItem.foodName}</Text>
                 <Text style={styles.foodTags}>{foodItem.tags.join(", ")}</Text>
                 <Text style={styles.foodDescription}>
-                  Order from {foodItem.startingPriceRange} ·{" as"}
+                  Order from {foodItem.startingPriceRange} ·{" "}
                   {foodItem.deliveryTime} min delivery
                 </Text>
               </View>
