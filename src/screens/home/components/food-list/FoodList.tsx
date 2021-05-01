@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { FoodItem } from "../../../../mock-data/MockFoodList";
 import GridViewItem from "./components/grid-view-item/GridViewItem";
