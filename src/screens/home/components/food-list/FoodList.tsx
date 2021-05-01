@@ -14,11 +14,11 @@ const FoodList: React.FunctionComponent<FoodListProps> = ({
   gridView,
   foodItems,
 }): JSX.Element => {
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item }: { item: FoodItem }) => {
     if (gridView) {
       return <GridViewItem />;
     }
-    return <ListViewItem />;
+    return <ListViewItem foodItem={item} />;
   };
   return (
     <SafeAreaView style={[styles.listWrapper]}>

@@ -2,7 +2,7 @@ export const FOOD_CATEGORIES = [
   "Main Plates",
   "Vegeterian",
   "Side Plates",
-  "Healhy",
+  "Healthy",
   "Fast Food",
 ];
 
@@ -19,6 +19,7 @@ export interface FoodItem {
   category: string;
   tags: string[];
   startingPriceRange: number;
+  starRating: number;
   deliveryTime: number;
   extras: string[];
   ingredients: string[];
@@ -34,6 +35,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plate",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -64,6 +66,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -94,6 +97,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -124,6 +128,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -154,6 +159,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -184,6 +190,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -214,6 +221,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -244,6 +252,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -274,6 +283,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -304,6 +314,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -334,6 +345,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
@@ -364,6 +376,7 @@ const FOOD_LIST: FoodItem[] = [
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    starRating: 4.5,
     deliveryTime: 90,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
