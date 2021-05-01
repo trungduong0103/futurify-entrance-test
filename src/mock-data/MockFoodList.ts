@@ -7,6 +7,11 @@ export const FOOD_CATEGORIES = [
   "Vegeterian",
 ];
 
+export enum RECIPE_TYPE {
+  VIDEO_RECIPES = "Video Recipes",
+  RECIPES = "Recipes",
+}
+
 export interface Nutrition {
   calories: number;
   protein: number;
@@ -18,6 +23,7 @@ export interface FoodItem {
   id: number;
   foodName: string;
   category: string;
+  recipeType: RECIPE_TYPE;
   tags: string[];
   startingPriceRange: number;
   starRating: number;
@@ -36,6 +42,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 0,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Fast Food", "Delicious", "Meat Lover"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -69,6 +76,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 1,
     foodName: "Say What Again MF",
     category: "Main Plates",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Meat Lover", "Bacon", "Cheesy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -101,6 +109,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 2,
     foodName: "Another Tasty Burger",
     category: "Main Plates",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Meat Lover", "Fast Food", "Cheesy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -134,6 +143,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 3,
     foodName: "Yum! Salads",
     category: "Salads",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Salads", "Healthy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -165,6 +175,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 4,
     foodName: "Super Duper Salad",
     category: "Salads",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Salads", "Healthy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -196,6 +207,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 5,
     foodName: "Caesar Salads",
     category: "Salads",
+    recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -227,6 +239,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 6,
     foodName: " Deluxe Ice Cream",
     category: "Dessert",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Cold", "Chocolate"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -250,6 +263,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 7,
     foodName: "Hot Ice Cream?!?",
     category: "Dessert",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Hot", "Vanilla"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -273,6 +287,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 8,
     foodName: "Spciy Ice Cream",
     category: "Dessert",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Hot", "Vanilla"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -296,6 +311,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 9,
     foodName: "Crispy Fies",
     category: "Side Plates",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Vegeterian", "Fry", "Salty"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -319,6 +335,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 10,
     foodName: "Scotch Eggs",
     category: "Side Plates",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Eggs", "Yolk", "Crispy"],
     startingPriceRange: 25,
     starRating: 4.5,
@@ -342,6 +359,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 11,
     foodName: "Kimchi",
     category: "Side Plates",
+    recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Vegeterian", "Spicy", "Healthy"],
     startingPriceRange: 25,
     starRating: 4.5,

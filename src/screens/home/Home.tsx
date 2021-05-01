@@ -5,16 +5,26 @@ import FoodList from "./components/food-list/FoodList";
 import Navigation from "./components/navigation/Navigation";
 import styles from "./HomeStyle";
 
-import FOOD_LIST, { FoodItem } from "../../mock-data/MockFoodList";
+import FOOD_LIST, { FoodItem, RECIPE_TYPE } from "../../mock-data/MockFoodList";
 import { useAppSelector } from "../../redux/hooks";
+import useDebounce from "../../hooks/useDebounce";
+import SectionedFoodList from "./components/sectioned-food-list/SectionedFoodList";
+
+export interface SectionDataObject {
+  title: RECIPE_TYPE;
+  data: FoodItem[];
+}
 
 const Home: React.FunctionComponent = (): JSX.Element => {
   const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>(
     FOOD_LIST,
   );
+  const [foodByRecipeType, setFoodByRecipeType] = useState<
+    SectionDataObject[] | []
+  >([]);
   const [gridView, setGridView] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
-  const [input, setInput] = useState<string>("");
+  const [debouncedValue, value, setValue] = useDebounce<string>("", 2000);
 
   const category = useAppSelector(state => state.foodCategory);
 
@@ -30,6 +40,36 @@ const Home: React.FunctionComponent = (): JSX.Element => {
     }
   }, [category]);
 
+  useEffect(() => {
+    const regex = new RegExp(debouncedValue.toLowerCase(), "g");
+    if (debouncedValue) {
+      const filteredFoods = FOOD_LIST.filter(food => {
+        if (regex.test(food.foodName.toLowerCase())) {
+          return true;
+        }
+        if (regex.test(food.category.toLowerCase())) {
+          return true;
+        }
+        return false;
+      });
+
+      const sectionedData: SectionDataObject[] | [] = [
+        { title: RECIPE_TYPE.RECIPES, data: [] },
+        { title: RECIPE_TYPE.VIDEO_RECIPES, data: [] },
+      ];
+
+      filteredFoods.forEach(food => {
+        if (food.recipeType === RECIPE_TYPE.RECIPES) {
+          sectionedData[0].data.push(food);
+        } else {
+          sectionedData[1].data.push(food);
+        }
+      });
+
+      setFoodByRecipeType(sectionedData);
+    }
+  }, [debouncedValue]);
+
   return (
     <View style={styles.container}>
       <View style={[styles.headerWrapper, styles.centered]}>
@@ -38,16 +78,23 @@ const Home: React.FunctionComponent = (): JSX.Element => {
           setGridView={setGridView}
           search={search}
           setSearch={setSearch}
-          input={input}
-          setInput={setInput}
+          input={value}
+          setInput={setValue}
         />
       </View>
       <View style={styles.foodListWrapper}>
-        <FoodList
-          gridView={gridView}
-          foodItems={foodByCategory}
-          setSearch={setSearch}
-        />
+        {search ? (
+          <SectionedFoodList
+            foodByRecipeType={foodByRecipeType}
+            setSearch={setSearch}
+          />
+        ) : (
+          <FoodList
+            gridView={gridView}
+            foodItems={foodByCategory}
+            setSearch={setSearch}
+          />
+        )}
       </View>
       <View style={styles.navigationWrapper}>
         <Navigation />

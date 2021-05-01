@@ -1,18 +1,20 @@
 import React from "react";
-import { TouchableOpacity, Image, StyleSheet } from "react-native";
+import { TouchableOpacity, Image, StyleSheet, ImageStyle } from "react-native";
 
 interface ImageButtonProps {
   source: any;
   handlePress: () => void;
+  style?: ImageStyle;
 }
 
 const ImageButton: React.FunctionComponent<ImageButtonProps> = ({
   source,
   handlePress,
+  style,
 }) => {
   return (
     <TouchableOpacity onPress={handlePress}>
-      <Image style={styles.image} source={source} />
+      <Image style={[styles.image, style]} source={source} />
     </TouchableOpacity>
   );
 };

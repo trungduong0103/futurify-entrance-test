@@ -1,11 +1,19 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { StyleSheet, View, SafeAreaView, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  Dimensions,
+  TextInput,
+  Image,
+} from "react-native";
 import Dropdown from "./components/drop-down/Dropdown";
 import SearchIcon from "../header/assets/search_icon.png";
 import ImageButton from "./components/image-button/ImageButton";
 import GridIcon from "../header/assets/grid_icon.png";
 import ListIcon from "../header/assets/list_icon.png";
-import { TextInput } from "react-native-gesture-handler";
+import BlackSearchIcon from "../header/assets/search_icon_black.png";
+import ClearIcon from "../header/assets/clear_icon.png";
 
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 
@@ -30,13 +38,17 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     <View style={[styles.headerWrapper, search ? null : styles.bottomLine]}>
       {search ? (
         <SafeAreaView style={styles.inputWrapper}>
+          <Image source={BlackSearchIcon} style={styles.blackSearchIcon} />
           <TextInput
             style={styles.input}
             value={input}
             onChangeText={setInput}
             onSubmitEditing={() => setSearch(false)}
             autoFocus
+            placeholder="Enter food category, name, etc..."
+            placeholderTextColor="#000"
           />
+          <ImageButton source={ClearIcon} handlePress={() => setInput("")} />
         </SafeAreaView>
       ) : (
         <>
@@ -68,20 +80,28 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.4,
     borderColor: "#7D7D7D",
   },
+  blackSearchIcon: {
+    width: 20,
+    height: 20,
+    resizeMode: "contain",
+  },
   childrenWrapper: {
     flex: 2,
     // height: "100%",
   },
   inputWrapper: {
     flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
   input: {
-    borderWidth: 0.5,
     borderRadius: 8,
     padding: 10,
     height: 35,
-    marginLeft: 10,
-    marginRight: 10,
+    width: "80%",
+    backgroundColor: "#C7CCD4",
+    marginBottom: 10,
   },
   actionButtonsWrapper: {
     flexDirection: "row",
