@@ -6,6 +6,7 @@ import Navigation from "./components/navigation/Navigation";
 import styles from "./HomeStyle";
 
 import FOOD_LIST, { FoodItem } from "../../mock-data/MockFoodList";
+import { useAppSelector } from "../../redux/hooks";
 
 const Home: React.FunctionComponent = (): JSX.Element => {
   const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>(
@@ -15,12 +16,19 @@ const Home: React.FunctionComponent = (): JSX.Element => {
   const [search, setSearch] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
 
-  // useEffect(() => {
-  //   const filteredFood = FOOD_LIST.filter(
-  //     food => food.category === "Main Plates",
-  //   );
-  //   setFoodByCategory(filteredFood);
-  // }, []);
+  const category = useAppSelector(state => state.foodCategory);
+
+  useEffect(() => {
+    if (category === "ALL") {
+      setFoodByCategory(FOOD_LIST);
+    } else {
+      const filteredFoods = FOOD_LIST.filter(
+        food => food.category === category || food.tags.includes(category),
+      );
+
+      setFoodByCategory(filteredFoods);
+    }
+  }, [category]);
 
   return (
     <View style={styles.container}>

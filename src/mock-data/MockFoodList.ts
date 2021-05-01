@@ -1,9 +1,10 @@
 export const FOOD_CATEGORIES = [
+  "ALL",
   "Main Plates",
-  "Vegeterian",
+  "Side Plates",
   "Salads",
-  "Healthy",
-  "Fast Food",
+  "Dessert",
+  "Vegeterian",
 ];
 
 export interface Nutrition {
@@ -68,7 +69,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 1,
     foodName: "Say What Again MF",
     category: "Main Plates",
-    tags: ["Vegeterian", "Gluten-free", "Healthy"],
+    tags: ["Meat Lover", "Bacon", "Cheesy"],
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
@@ -92,8 +93,7 @@ const FOOD_LIST: FoodItem[] = [
       totalFat: 25,
       totalCarbs: 12,
     },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "Say what again motherfucker, SAY WHAT AGAIN!",
     imageUrl:
       "https://i.etsystatic.com/5654812/r/il/6bb51b/1627408606/il_570xN.1627408606_gqjf.jpg",
   },
@@ -101,7 +101,7 @@ const FOOD_LIST: FoodItem[] = [
     id: 2,
     foodName: "Another Tasty Burger",
     category: "Main Plates",
-    tags: ["Vegeterian", "Gluten-free", "Healthy"],
+    tags: ["Meat Lover", "Fast Food", "Cheesy"],
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
@@ -341,7 +341,7 @@ const FOOD_LIST: FoodItem[] = [
   {
     id: 11,
     foodName: "Kimchi",
-    category: "Side Dishes",
+    category: "Side Plates",
     tags: ["Vegeterian", "Spicy", "Healthy"],
     startingPriceRange: 25,
     starRating: 4.5,

@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
   foodName: {
     fontSize: 16,
     fontWeight: "600",
-    marginTop: 2,
   },
   moreFoodDescription: {
     fontSize: 14,
