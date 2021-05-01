@@ -1,11 +1,13 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView, Dimensions } from "react-native";
 import Dropdown from "./components/drop-down/Dropdown";
 import SearchIcon from "../header/assets/search_icon.png";
 import ImageButton from "./components/image-button/ImageButton";
 import GridIcon from "../header/assets/grid_icon.png";
 import ListIcon from "../header/assets/list_icon.png";
 import { TextInput } from "react-native-gesture-handler";
+
+const WINDOW_HEIGHT = Dimensions.get("window").height;
 
 interface HeaderProps {
   gridView: boolean;
@@ -25,7 +27,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   setInput,
 }): JSX.Element => {
   return (
-    <View style={styles.headerWrapper}>
+    <View style={[styles.headerWrapper, search ? null : styles.bottomLine]}>
       {search ? (
         <SafeAreaView style={styles.inputWrapper}>
           <TextInput
@@ -59,27 +61,33 @@ const Header: React.FunctionComponent<HeaderProps> = ({
 const styles = StyleSheet.create({
   headerWrapper: {
     width: "100%",
-    position: "relative",
     flexDirection: "row",
+    flex: 1,
+  },
+  bottomLine: {
+    borderBottomWidth: 0.4,
+    borderColor: "#7D7D7D",
   },
   childrenWrapper: {
     flex: 2,
+    // height: "100%",
   },
   inputWrapper: {
     flex: 1,
   },
   input: {
+    borderWidth: 0.5,
     borderRadius: 8,
     padding: 10,
-    height: 40,
-    borderWidth: 1,
-    margin: 12,
+    height: 35,
+    marginLeft: 10,
+    marginRight: 10,
   },
   actionButtonsWrapper: {
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    paddingTop: 25,
+    marginTop: WINDOW_HEIGHT * 0.03,
   },
 });
 

@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+
 const WINDOW_HEIGHT = Dimensions.get("window").height;
 const WINDOW_WIDTH = Dimensions.get("window").width;
 
@@ -13,7 +14,7 @@ export default StyleSheet.create({
   dropdownPickerWrapper: {
     display: "flex",
     flexDirection: "row",
-    marginTop: WINDOW_HEIGHT * 0.03,
+    marginTop: WINDOW_HEIGHT * 0.05,
   },
   dropdownIcon: {
     height: 16,
@@ -34,7 +35,7 @@ export default StyleSheet.create({
   },
   modalWrapper: {
     position: "absolute",
-    top: WINDOW_HEIGHT * 0.075,
+    top: WINDOW_HEIGHT * 0.09,
     left: WINDOW_WIDTH * 0.25,
     width: WINDOW_WIDTH / 2,
   },

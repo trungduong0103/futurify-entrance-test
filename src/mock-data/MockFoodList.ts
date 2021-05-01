@@ -66,7 +66,7 @@ const FOOD_LIST: FoodItem[] = [
   },
   {
     id: 1,
-    foodName: "Say What Again Mf",
+    foodName: "Say What Again MF",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,

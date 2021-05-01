@@ -12,7 +12,6 @@ export default StyleSheet.create({
   },
   headerWrapper: {
     height: 0.1 * WINDOW_HEIGHT,
-    borderBottomWidth: 0.5,
     borderBottomColor: "#AFAFAF",
   },
   foodListWrapper: {

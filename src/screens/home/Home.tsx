@@ -8,7 +8,9 @@ import styles from "./HomeStyle";
 import FOOD_LIST, { FoodItem } from "../../mock-data/MockFoodList";
 
 const Home: React.FunctionComponent = (): JSX.Element => {
-  const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>(FOOD_LIST);
+  const [foodByCategory, setFoodByCategory] = useState<FoodItem[] | []>(
+    FOOD_LIST,
+  );
   const [gridView, setGridView] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
   const [input, setInput] = useState<string>("");
