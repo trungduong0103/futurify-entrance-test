@@ -1,11 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, Dimensions, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import { setCategory } from "../../../../../../../redux/foodCategorySlice";
 import { useAppDispatch } from "../../../../../../../redux/hooks";
 
 export const LIST_ITEM_HEIGHT = 40;
-
-const WINDOW_WIDTH = Dimensions.get("window").width;
 
 interface DropdownItemProps {
   category: string;
@@ -39,22 +37,24 @@ const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   const dispatch = useAppDispatch();
 
   return (
-    <TouchableOpacity
+    <TouchableWithoutFeedback
       onPress={() => {
         dispatch(setCategory(category));
         setShowModal(false);
-      }}
-      style={[
-        styles.item,
-        {
-          borderBottomLeftRadius: bottomRadius,
-          borderBottomRightRadius: bottomRadius,
-          borderTopLeftRadius: topRadius,
-          borderTopRightRadius: topRadius,
-        },
-      ]}>
-      <Text>{category}</Text>
-    </TouchableOpacity>
+      }}>
+      <View
+        style={[
+          styles.item,
+          {
+            borderBottomLeftRadius: bottomRadius,
+            borderBottomRightRadius: bottomRadius,
+            borderTopLeftRadius: topRadius,
+            borderTopRightRadius: topRadius,
+          },
+        ]}>
+        <Text>{category}</Text>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
 

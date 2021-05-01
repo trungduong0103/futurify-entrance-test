@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-interface FppdListProps {
+interface FoodListProps {
   gridView: boolean;
-  setGridView
+  setGridView: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const FoodList: React.FunctionComponent = (): JSX.Element => {
+const FoodList: React.FunctionComponent<FoodListProps> = ({gridView, setGridView}): JSX.Element => {
   return (
     <View>
       <Text>This is header</Text>
