@@ -14,6 +14,7 @@ export interface Nutrition {
 }
 
 export interface FoodItem {
+  id: number;
   foodName: string;
   category: string;
   tags: string[];
@@ -28,6 +29,7 @@ export interface FoodItem {
 
 const FOOD_LIST: FoodItem[] = [
   {
+    id: 0,
     foodName: "Very Tasty Burger",
     category: "Main Plate",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -57,6 +59,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 1,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -86,6 +89,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 2,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -115,6 +119,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 3,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -144,6 +149,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 5,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -173,6 +179,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 6,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -202,6 +209,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 7,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -231,6 +239,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 8,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -260,6 +269,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 9,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -289,6 +299,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 10,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -318,6 +329,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 11,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
@@ -347,6 +359,7 @@ const FOOD_LIST: FoodItem[] = [
       "https://media-cdn.tripadvisor.com/media/photo-p/14/cd/fb/d5/the-lush.jpg",
   },
   {
+    id: 12,
     foodName: "Very Tasty Burger",
     category: "Main Plates",
     tags: ["Vegeterian", "Gluten-free", "Healthy"],

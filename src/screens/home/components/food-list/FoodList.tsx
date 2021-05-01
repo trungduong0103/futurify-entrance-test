@@ -1,17 +1,58 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { FlatList } from "react-native-gesture-handler";
+import { FoodItem } from "../../../../mock-data/MockFoodList";
+import GridViewItem from "./components/grid-view-item/GridViewItem";
+import ListViewItem from "./components/list-view-item/ListViewItem";
 
 interface FoodListProps {
   gridView: boolean;
-  setGridView: React.Dispatch<React.SetStateAction<boolean>>;
+  foodItems: FoodItem[];
 }
 
-const FoodList: React.FunctionComponent<FoodListProps> = ({gridView, setGridView}): JSX.Element => {
+const FoodList: React.FunctionComponent<FoodListProps> = ({
+  gridView,
+  foodItems,
+}): JSX.Element => {
+  const renderItem = ({ item }) => {
+    if (gridView) {
+      return <GridViewItem />;
+    }
+    return <ListViewItem />;
+  };
   return (
-    <View>
-      <Text>This is header</Text>
-    </View>
+    <SafeAreaView style={[styles.listWrapper]}>
+      {gridView ? (
+        <FlatList
+          key="#"
+          data={foodItems}
+          style={[styles.listWrapper]}
+          renderItem={renderItem}
+          keyExtractor={item => "#" + item.id}
+          horizontal={false}
+          numColumns={2}
+        />
+      ) : (
+        <FlatList
+          key={"_"}
+          data={foodItems}
+          style={[styles.listWrapper]}
+          renderItem={renderItem}
+          keyExtractor={item => "_" + item.id}
+        />
+      )}
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  listWrapper: {
+    flex: 1,
+  },
+  columnView: {
+    flexDirection: "column",
+  },
+  gridView: {},
+});
 
 export default FoodList;

@@ -37,7 +37,7 @@ const Home: React.FunctionComponent = (): JSX.Element => {
           />
         </View>
         <View style={styles.foodListWrapper}>
-          <FoodList gridView={gridView} setGridView={setGridView} />
+          <FoodList gridView={gridView} foodItems={foodByCategory} />
         </View>
         <View style={styles.navigationWrapper}>
           <Navigation />

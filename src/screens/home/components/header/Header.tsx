@@ -46,7 +46,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
               handlePress={() => setSearch(true)}
             />
             <ImageButton
-              source={gridView ? GridIcon : ListIcon}
+              source={gridView ? ListIcon : GridIcon}
               handlePress={() => setGridView(prevView => !prevView)}
             />
           </View>
