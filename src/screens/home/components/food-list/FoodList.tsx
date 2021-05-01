@@ -8,22 +8,32 @@ import ListViewItem from "./components/list-view-item/ListViewItem";
 interface FoodListProps {
   gridView: boolean;
   foodItems: FoodItem[];
+  setSearch: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const FoodList: React.FunctionComponent<FoodListProps> = ({
   gridView,
   foodItems,
+  setSearch,
 }): JSX.Element => {
   const renderItem = ({ item }: { item: FoodItem }) => {
     if (gridView) {
-      return <GridViewItem />;
+      return <GridViewItem foodItem={item} setSearch={setSearch} />;
     }
-    return <ListViewItem foodItem={item} />;
+    return <ListViewItem foodItem={item} setSearch={setSearch} />;
   };
+
+  // cannot chaning numColumns on the fly so must use conditional rendering
+  // instead of changing numColumns based on gridView
   return (
     <SafeAreaView style={[styles.listWrapper]}>
       {gridView ? (
         <FlatList
+          removeClippedSubviews={true} // Unmount components when outside of window
+          initialNumToRender={2} // Reduce initial render amount
+          maxToRenderPerBatch={1} // Reduce number in each render batch
+          updateCellsBatchingPeriod={100} // Increase time between renders
+          windowSize={7}
           key="#"
           data={foodItems}
           style={[styles.listWrapper]}
@@ -31,6 +41,7 @@ const FoodList: React.FunctionComponent<FoodListProps> = ({
           keyExtractor={item => "#" + item.id}
           horizontal={false}
           numColumns={2}
+          disableVirtualization={true}
         />
       ) : (
         <FlatList
@@ -39,6 +50,7 @@ const FoodList: React.FunctionComponent<FoodListProps> = ({
           style={[styles.listWrapper]}
           renderItem={renderItem}
           keyExtractor={item => "_" + item.id}
+          disableVirtualization={true}
         />
       )}
     </SafeAreaView>

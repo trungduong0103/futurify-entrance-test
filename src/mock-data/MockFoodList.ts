@@ -21,6 +21,8 @@ export interface FoodItem {
   startingPriceRange: number;
   starRating: number;
   deliveryTime: number;
+  prepTime: string;
+  servingPerDish: number;
   extras: string[];
   ingredients: string[];
   nutrition: Nutrition;
@@ -37,6 +39,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -68,6 +72,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -99,6 +105,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -130,6 +138,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -161,6 +171,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -192,6 +204,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -223,6 +237,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -254,6 +270,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -285,6 +303,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -316,6 +336,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -347,6 +369,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",
@@ -378,6 +402,8 @@ const FOOD_LIST: FoodItem[] = [
     startingPriceRange: 25,
     starRating: 4.5,
     deliveryTime: 90,
+    prepTime: "45 - 60",
+    servingPerDish: 4,
     extras: ["jumbo shrimp", "cheese", "white anchovies"],
     ingredients: [
       "buns",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TouchableWithoutFeedback, View } from "react-native";
+import { View } from "react-native";
 import Header from "./components/header/Header";
 import FoodList from "./components/food-list/FoodList";
 import Navigation from "./components/navigation/Navigation";
@@ -21,29 +21,28 @@ const Home: React.FunctionComponent = (): JSX.Element => {
   }, []);
 
   return (
-    <TouchableWithoutFeedback
-      style={styles.container}
-      accessible={false}
-      onPress={() => setSearch(false)}>
-      <View style={styles.container}>
-        <View style={[styles.headerWrapper, styles.centered]}>
-          <Header
-            gridView={gridView}
-            setGridView={setGridView}
-            search={search}
-            setSearch={setSearch}
-            input={input}
-            setInput={setInput}
-          />
-        </View>
-        <View style={styles.foodListWrapper}>
-          <FoodList gridView={gridView} foodItems={foodByCategory} />
-        </View>
-        <View style={styles.navigationWrapper}>
-          <Navigation />
-        </View>
+    <View style={styles.container}>
+      <View style={[styles.headerWrapper, styles.centered]}>
+        <Header
+          gridView={gridView}
+          setGridView={setGridView}
+          search={search}
+          setSearch={setSearch}
+          input={input}
+          setInput={setInput}
+        />
       </View>
-    </TouchableWithoutFeedback>
+      <View style={styles.foodListWrapper}>
+        <FoodList
+          gridView={gridView}
+          foodItems={foodByCategory}
+          setSearch={setSearch}
+        />
+      </View>
+      <View style={styles.navigationWrapper}>
+        <Navigation />
+      </View>
+    </View>
   );
 };
 

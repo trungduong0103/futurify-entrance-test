@@ -11,12 +11,12 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerWrapper: {
-    height: 0.075 * WINDOW_HEIGHT,
+    height: 0.1 * WINDOW_HEIGHT,
     borderBottomWidth: 0.5,
-    borderBottomColor: '#AFAFAF'
+    borderBottomColor: "#AFAFAF",
   },
   foodListWrapper: {
-    height: 0.85 * WINDOW_HEIGHT,
+    height: 0.825 * WINDOW_HEIGHT,
   },
   navigationWrapper: {
     height: 0.075 * WINDOW_HEIGHT,

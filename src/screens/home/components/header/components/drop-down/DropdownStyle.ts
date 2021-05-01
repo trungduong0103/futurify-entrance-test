@@ -13,7 +13,7 @@ export default StyleSheet.create({
   dropdownPickerWrapper: {
     display: "flex",
     flexDirection: "row",
-    paddingTop: 10,
+    marginTop: WINDOW_HEIGHT * 0.03,
   },
   dropdownIcon: {
     height: 16,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   modalWrapper: {
     position: "absolute",
-    top: WINDOW_HEIGHT * 0.06,
+    top: WINDOW_HEIGHT * 0.075,
     left: WINDOW_WIDTH * 0.25,
     width: WINDOW_WIDTH / 2,
   },

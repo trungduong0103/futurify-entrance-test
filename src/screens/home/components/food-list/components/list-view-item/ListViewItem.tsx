@@ -1,46 +1,69 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { FoodItem } from "../../../../../../mock-data/MockFoodList";
 import StarRatingIcon from "../../../header/assets/star_rating_icon.png";
 
+const WINDOW_WIDTH = Dimensions.get("window").width;
+const WINDOW_HEIGHT = Dimensions.get("window").height;
+
 interface ListViewItemProps {
   foodItem: FoodItem;
+  setSearch: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ListViewItem: React.FunctionComponent<ListViewItemProps> = ({
   foodItem,
+  setSearch,
 }) => {
+  // cannot use fragment with TouchableWithoutFeedback, pressing doesn't do anything
   return (
-    <>
-      <View style={styles.itemContainer}>
-        <View style={styles.imageWrapper}>
-          <Image source={{ uri: foodItem.imageUrl }} style={styles.image} />
-        </View>
+    <TouchableWithoutFeedback
+      onPress={() => {
+        console.log("hey");
+        Keyboard.dismiss;
+        setSearch(false);
+      }}>
+      <View>
+        <View style={styles.itemWrapper}>
+          <View style={styles.imageWrapper}>
+            <Image source={{ uri: foodItem.imageUrl }} style={styles.image} />
+          </View>
 
-        <View style={styles.foodDescriptionWrapper}>
-          <View style={styles.foodDescriptionRow}>
-            <View>
-              <Text style={styles.foodName}>{foodItem.foodName}</Text>
-              <Text style={styles.foodTags}>{foodItem.tags.join(",")}</Text>
-              <Text style={styles.foodDescription}>
-                Order from {foodItem.startingPriceRange} ·{" "}
-                {foodItem.deliveryTime} min delivery
-              </Text>
-            </View>
-            <View style={[styles.foodRatingRow]}>
-              <Image source={StarRatingIcon} style={styles.starRating} />
-              <Text style={styles.foodDescription}>{foodItem.starRating}</Text>
+          <View style={styles.foodDescriptionWrapper}>
+            <View style={styles.foodDescriptionRow}>
+              <View>
+                <Text style={styles.foodName}>{foodItem.foodName}</Text>
+                <Text style={styles.foodTags}>{foodItem.tags.join(", ")}</Text>
+                <Text style={styles.foodDescription}>
+                  Order from {foodItem.startingPriceRange} ·{" as"}
+                  {foodItem.deliveryTime} min delivery
+                </Text>
+              </View>
+              <View style={[styles.foodRatingRow]}>
+                <Image source={StarRatingIcon} style={styles.starRating} />
+                <Text style={styles.foodDescription}>
+                  {foodItem.starRating}
+                </Text>
+              </View>
             </View>
           </View>
         </View>
+        <View style={styles.hr} />
       </View>
-      <View style={styles.hr} />
-    </>
+    </TouchableWithoutFeedback>
   );
 };
 
 const styles = StyleSheet.create({
-  itemContainer: {
+  itemWrapper: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
@@ -53,17 +76,17 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   image: {
-    width: 100,
-    height: 100,
-    borderRadius: 16,
-    resizeMode: "contain",
+    width: WINDOW_WIDTH * 0.2,
+    height: WINDOW_HEIGHT * 0.1,
+    borderRadius: 8,
+    resizeMode: "cover",
   },
   foodDescriptionWrapper: {
     flex: 5,
   },
   foodDescriptionRow: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   foodName: {
     fontSize: 20,
