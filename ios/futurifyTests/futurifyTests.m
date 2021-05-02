@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface futurify_entrance_testTests : XCTestCase
+@interface futurifyTests : XCTestCase
 
 @end
 
-@implementation futurify_entrance_testTests
+@implementation futurifyTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
