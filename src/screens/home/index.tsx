@@ -16,7 +16,7 @@ const HomeWrapper = () => {
   const [foodByRecipeType, setFoodByRecipeType] = useState<
     SectionDataObject[] | []
   >([]);
-  const [gridView, setGridView] = useState<boolean>(false);
+  const [gridView, setGridView] = useState<boolean>(true);
   const [search, setSearch] = useState<boolean>(false);
   const [debouncedValue, value, setValue] = useDebounce<string>("", 2000);
 

@@ -6,9 +6,14 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import styles from "./GridViewItemStyle";
 import { FoodItem } from "../../../../../../mock-data/MockFoodList";
 import ChevronRightIcon from "../../assets/chevron_right_icon.png";
+import {
+  ApplicationStackNavigationProp,
+  Routes,
+} from "../../../../../../routes/routes";
 
 interface GridViewItemProps {
   foodItem: FoodItem;
@@ -19,11 +24,15 @@ const GridViewItem: React.FunctionComponent<GridViewItemProps> = ({
   foodItem,
   setSearch,
 }) => {
+  const navigation = useNavigation<
+    ApplicationStackNavigationProp<Routes.HomeScreen>
+  >();
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss;
         setSearch(false);
+        navigation.navigate(Routes.FoodDetailScreen, { item: foodItem });
       }}>
       <View style={styles.itemContainer}>
         <View style={styles.imageWrapper}>
