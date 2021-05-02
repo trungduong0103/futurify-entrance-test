@@ -1,6 +1,6 @@
 import { FoodItem } from "../mock-data/MockFoodList";
 import FoodDetail from "../screens/food-detail/FoodDetail";
-import Home from "../screens/home/Home";
+import Home from "../screens/home";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
 

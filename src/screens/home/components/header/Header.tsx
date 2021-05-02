@@ -1,12 +1,5 @@
 import React, { Dispatch, SetStateAction } from "react";
-import {
-  StyleSheet,
-  View,
-  SafeAreaView,
-  Dimensions,
-  TextInput,
-  Image,
-} from "react-native";
+import { View, SafeAreaView, TextInput, Image } from "react-native";
 import Dropdown from "./components/drop-down/Dropdown";
 import SearchIcon from "../header/assets/search_icon.png";
 import ImageButton from "./components/image-button/ImageButton";
@@ -14,8 +7,7 @@ import GridIcon from "../header/assets/grid_icon.png";
 import ListIcon from "../header/assets/list_icon.png";
 import BlackSearchIcon from "../header/assets/search_icon_black.png";
 import ClearIcon from "../header/assets/clear_icon.png";
-
-const WINDOW_HEIGHT = Dimensions.get("window").height;
+import styles from "./HeaderStyle";
 
 interface HeaderProps {
   gridView: boolean;
@@ -79,50 +71,5 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  headerWrapper: {
-    width: "100%",
-    flexDirection: "row",
-    flex: 1,
-  },
-  bottomLine: {
-    borderBottomWidth: 0.4,
-    borderColor: "#7D7D7D",
-  },
-  blackSearchIcon: {
-    width: 20,
-    height: 20,
-    resizeMode: "contain",
-    marginBottom: 10,
-  },
-  clearIcon: {
-    marginBottom: 10,
-  },
-  childrenWrapper: {
-    flex: 2,
-    // height: "100%",
-  },
-  inputWrapper: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-  },
-  input: {
-    borderRadius: 8,
-    padding: 10,
-    height: 35,
-    width: "80%",
-    backgroundColor: "#C7CCD4",
-    marginBottom: 10,
-  },
-  actionButtonsWrapper: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    marginTop: WINDOW_HEIGHT * 0.03,
-  },
-});
 
 export default Header;

@@ -16,7 +16,11 @@ const App = (): JSX.Element => {
             headerShown: false,
           }}>
           {routes.map(({ name, component }) => (
-            <ApplicationStack.Screen name={name} component={component} />
+            <ApplicationStack.Screen
+              key={name}
+              name={name}
+              component={component}
+            />
           ))}
         </ApplicationStack.Navigator>
       </NavigationContainer>
