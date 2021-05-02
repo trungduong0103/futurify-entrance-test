@@ -27,7 +27,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
   setInput,
 }): JSX.Element => {
   return (
-    <View style={[styles.headerWrapper, search ? null : styles.bottomLine]}>
+    <View style={styles.headerWrapper}>
       {search ? (
         <SafeAreaView style={styles.inputWrapper}>
           <Image source={BlackSearchIcon} style={styles.blackSearchIcon} />

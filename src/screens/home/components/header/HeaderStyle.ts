@@ -8,10 +8,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     flex: 1,
   },
-  bottomLine: {
-    borderBottomWidth: 0.4,
-    borderColor: "#7D7D7D",
-  },
+  bottomLine: {},
   blackSearchIcon: {
     width: 20,
     height: 20,

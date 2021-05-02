@@ -15,9 +15,9 @@ export default StyleSheet.create({
     borderBottomColor: "#AFAFAF",
   },
   foodListWrapper: {
-    height: 0.825 * WINDOW_HEIGHT,
+    height: 0.8 * WINDOW_HEIGHT,
   },
   navigationWrapper: {
-    height: 0.075 * WINDOW_HEIGHT,
+    height: 0.1 * WINDOW_HEIGHT,
   },
 });
