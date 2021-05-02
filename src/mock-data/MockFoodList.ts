@@ -19,6 +19,11 @@ export interface Nutrition {
   totalCarbs: number;
 }
 
+export interface ExtraOption {
+  option: string;
+  price: number;
+}
+
 export interface FoodItem {
   id: number;
   foodName: string;
@@ -26,11 +31,12 @@ export interface FoodItem {
   recipeType: RECIPE_TYPE;
   tags: string[];
   startingPriceRange: number;
+  portionSize: number;
   starRating: number;
   deliveryTime: number;
   prepTime: string;
   servingPerDish: number;
-  extras: string[];
+  extras: ExtraOption[];
   ingredients: string[];
   nutrition: Nutrition;
   description: string;
@@ -45,11 +51,16 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Fast Food", "Delicious", "Meat Lover"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["bacon", "cheese", "lettuce"],
+    extras: [
+      { option: "bacon", price: 6.69 },
+      { option: "cheese", price: 4.42 },
+      { option: "lettuce", price: 3.95 },
+    ],
     ingredients: [
       "buns",
       "meat",
@@ -79,11 +90,16 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Meat Lover", "Bacon", "Cheesy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["bacon", "cheese", "lettuce"],
+    extras: [
+      { option: "bacon", price: 6.69 },
+      { option: "cheese", price: 4.42 },
+      { option: "lettuce", price: 3.95 },
+    ],
     ingredients: [
       "buns",
       "meat",
@@ -112,11 +128,16 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Meat Lover", "Fast Food", "Cheesy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["bacon", "cheese", "lettuce"],
+    extras: [
+      { option: "bacon", price: 6.69 },
+      { option: "cheese", price: 4.42 },
+      { option: "lettuce", price: 3.95 },
+    ],
     ingredients: [
       "buns",
       "meat",
@@ -146,11 +167,29 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Salads", "Healthy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["lettuce", "cucumber", "vinegar", "eggs"],
+    extras: [
+      {
+        option: "lettuce",
+        price: 3.5,
+      },
+      {
+        option: "cucumber",
+        price: 3.32,
+      },
+      {
+        option: "vinegar",
+        price: 0.5,
+      },
+      {
+        option: "eggs",
+        price: 3,
+      },
+    ],
     ingredients: [
       "lettuce",
       "vinegar",
@@ -178,11 +217,29 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Salads", "Healthy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["lettuce", "cucumber", "vinegar", "eggs"],
+    extras: [
+      {
+        option: "lettuce",
+        price: 3.5,
+      },
+      {
+        option: "cucumber",
+        price: 3.32,
+      },
+      {
+        option: "vinegar",
+        price: 0.5,
+      },
+      {
+        option: "eggs",
+        price: 3,
+      },
+    ],
     ingredients: [
       "lettuce",
       "vinegar",
@@ -210,11 +267,29 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.RECIPES,
     tags: ["Vegeterian", "Gluten-free", "Healthy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["lettuce", "cucumber", "vinegar", "eggs"],
+    extras: [
+      {
+        option: "lettuce",
+        price: 3.5,
+      },
+      {
+        option: "cucumber",
+        price: 3.32,
+      },
+      {
+        option: "vinegar",
+        price: 0.5,
+      },
+      {
+        option: "eggs",
+        price: 3,
+      },
+    ],
     ingredients: [
       "lettuce",
       "vinegar",
@@ -242,11 +317,25 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Cold", "Chocolate"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["vanilla topping", "chocolate chips", "crackers"],
+    extras: [
+      {
+        option: "vanilla topping",
+        price: 1.5,
+      },
+      {
+        option: "chocolate chips",
+        price: 1.5,
+      },
+      {
+        option: "crackers",
+        price: 1.5,
+      },
+    ],
     ingredients: ["milk", "eggs", "chocolate", "crackers"],
     nutrition: {
       calories: 470,
@@ -266,11 +355,25 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Hot", "Vanilla"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["vanilla topping", "chocolate chips", "crackers"],
+    extras: [
+      {
+        option: "vanilla topping",
+        price: 1.5,
+      },
+      {
+        option: "chocolate chips",
+        price: 1.5,
+      },
+      {
+        option: "crackers",
+        price: 1.5,
+      },
+    ],
     ingredients: ["milk", "eggs", "chocolate", "crackers"],
     nutrition: {
       calories: 470,
@@ -290,11 +393,25 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Ice Cream", "Hot", "Vanilla"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["vanilla topping", "chocolate chips", "crackers"],
+    extras: [
+      {
+        option: "vanilla topping",
+        price: 1.5,
+      },
+      {
+        option: "chocolate chips",
+        price: 1.5,
+      },
+      {
+        option: "crackers",
+        price: 1.5,
+      },
+    ],
     ingredients: ["milk", "eggs", "chocolate", "crackers"],
     nutrition: {
       calories: 470,
@@ -314,11 +431,25 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Vegeterian", "Fry", "Salty"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["ketchup", "mayo", "mustard"],
+    extras: [
+      {
+        option: "ketchup",
+        price: 0.5,
+      },
+      {
+        option: "mayo",
+        price: 0.5,
+      },
+      {
+        option: "mustard",
+        price: 0.5,
+      },
+    ],
     ingredients: ["potato", "salt", "oil"],
     nutrition: {
       calories: 470,
@@ -338,11 +469,25 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Eggs", "Yolk", "Crispy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",
     servingPerDish: 4,
-    extras: ["eggs", "lettuce", "mustard"],
+    extras: [
+      {
+        option: "ketchup",
+        price: 0.5,
+      },
+      {
+        option: "mayo",
+        price: 0.5,
+      },
+      {
+        option: "mustard",
+        price: 0.5,
+      },
+    ],
     ingredients: ["eggs", "flour", "salt"],
     nutrition: {
       calories: 470,
@@ -362,6 +507,7 @@ const FOOD_LIST: FoodItem[] = [
     recipeType: RECIPE_TYPE.VIDEO_RECIPES,
     tags: ["Vegeterian", "Spicy", "Healthy"],
     startingPriceRange: 25,
+    portionSize: 300,
     starRating: 4.5,
     deliveryTime: 90,
     prepTime: "45 - 60",

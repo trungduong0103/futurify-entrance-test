@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderBottomWidth: 1,
-    borderColor: "#f4f4f6",
+    borderColor: "#F4F4F6",
     height: LIST_ITEM_HEIGHT,
   },
 });
