@@ -6,8 +6,8 @@ import {
   SafeAreaView,
   SectionList,
   StyleSheet,
+  TouchableOpacity,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { FoodItem, RECIPE_TYPE } from "../../../../mock-data/MockFoodList";
 import { SectionDataObject } from "../../Home";
 import ImageButton from "../header/components/image-button/ImageButton";
@@ -46,31 +46,29 @@ const SectionedFoodList: React.FunctionComponent<SectionedFoodListProps> = ({
 
     return (
       <TouchableOpacity onPress={() => setSearch(false)}>
-        <>
-          <View style={styles.item}>
-            <View style={styles.foodImageWrapper}>
-              <Image source={{ uri: item.imageUrl }} style={styles.foodImage} />
+        <View style={styles.item}>
+          <View style={styles.foodImageWrapper}>
+            <Image source={{ uri: item.imageUrl }} style={styles.foodImage} />
+          </View>
+          <View style={[styles.rightItemWrapper, !isLast && styles.hr]}>
+            <View style={styles.foodDesriptionWrapper}>
+              <Text style={styles.foodName}>{item.foodName}</Text>
+              <View style={styles.foodDescriptionRow}>
+                <Image source={StopWatchIcon} style={styles.stopWatch} />
+                <Text style={styles.foodDescription}>
+                  {item.prepTime} min · for {item.servingPerDish} people
+                </Text>
+              </View>
             </View>
-            <View style={[styles.rightItemWrapper, !isLast && styles.hr]}>
-              <View style={styles.foodDesriptionWrapper}>
-                <Text style={styles.foodName}>{item.foodName}</Text>
-                <View style={styles.foodDescriptionRow}>
-                  <Image source={StopWatchIcon} style={styles.stopWatch} />
-                  <Text style={styles.foodDescription}>
-                    {item.prepTime} min · for {item.servingPerDish} people
-                  </Text>
-                </View>
-              </View>
-              <View style={styles.chevronWrapper}>
-                <ImageButton
-                  source={ChevronRight}
-                  handlePress={() => {}}
-                  style={styles.chevronRight}
-                />
-              </View>
+            <View style={styles.chevronWrapper}>
+              <ImageButton
+                source={ChevronRight}
+                handlePress={() => {}}
+                style={styles.chevronRight}
+              />
             </View>
           </View>
-        </>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -155,6 +153,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 20,
+    marginLeft: 8,
     marginTop: 30,
     marginBottom: 5,
     color: "#AFAFAF",

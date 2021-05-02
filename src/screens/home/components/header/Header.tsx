@@ -48,7 +48,17 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             placeholder="Enter food category, name, etc..."
             placeholderTextColor="#000"
           />
-          <ImageButton source={ClearIcon} handlePress={() => setInput("")} />
+          <ImageButton
+            source={ClearIcon}
+            style={styles.clearIcon}
+            handlePress={() => {
+              if (input === "") {
+                setSearch(false);
+              } else {
+                setInput("");
+              }
+            }}
+          />
         </SafeAreaView>
       ) : (
         <>
@@ -84,6 +94,10 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     resizeMode: "contain",
+    marginBottom: 10,
+  },
+  clearIcon: {
+    marginBottom: 10,
   },
   childrenWrapper: {
     flex: 2,

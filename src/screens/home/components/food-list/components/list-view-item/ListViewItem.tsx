@@ -8,8 +8,13 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FoodItem } from "../../../../../../mock-data/MockFoodList";
 import StarRatingIcon from "../../../header/assets/star_rating_icon.png";
+import {
+  ApplicationStackNavigationProp,
+  Routes,
+} from "../../../../../../routes/routes";
 
 const WINDOW_WIDTH = Dimensions.get("window").width;
 const WINDOW_HEIGHT = Dimensions.get("window").height;
@@ -23,12 +28,16 @@ const ListViewItem: React.FunctionComponent<ListViewItemProps> = ({
   foodItem,
   setSearch,
 }) => {
+  const navigation = useNavigation<
+    ApplicationStackNavigationProp<Routes.HomeScreen>
+  >();
   // cannot use fragment with TouchableWithoutFeedback, pressing doesn't do anything
   return (
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss;
         setSearch(false);
+        navigation.navigate(Routes.FoodDetailScreen, { item: foodItem });
       }}>
       <View>
         <View style={styles.itemWrapper}>

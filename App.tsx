@@ -1,11 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "./src/screens/home/Home";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import routes, { ApplicationStackParamList } from "./src/routes/routes";
 
-const ApplicationStack = createStackNavigator();
+const ApplicationStack = createStackNavigator<ApplicationStackParamList>();
 
 const App = (): JSX.Element => {
   return (
@@ -15,7 +15,9 @@ const App = (): JSX.Element => {
           screenOptions={{
             headerShown: false,
           }}>
-          <ApplicationStack.Screen name="Home" component={Home} />
+          {routes.map(({ name, component }) => (
+            <ApplicationStack.Screen name={name} component={component} />
+          ))}
         </ApplicationStack.Navigator>
       </NavigationContainer>
     </Provider>
