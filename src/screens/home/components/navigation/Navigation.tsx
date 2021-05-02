@@ -40,6 +40,7 @@ const Navigation: React.FunctionComponent = (): JSX.Element => {
       {TABS.map(tab => (
         <View style={styles.tabColumn}>
           <ImageButton
+            key={tab.label}
             source={tab.icon}
             handlePress={doNothing}
             style={styles.iconImage}

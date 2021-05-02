@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "futurify.app"
-               BlueprintName = "futurify"
-               ReferencedContainer = "container:futurify.xcodeproj">
+               BuildableName = "Futurify.app"
+               BlueprintName = "Futurify"
+               ReferencedContainer = "container:Futurify.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "futurifyTests.xctest"
-               BlueprintName = "futurifyTests"
-               ReferencedContainer = "container:futurify.xcodeproj">
+               BuildableName = "FuturifyTests.xctest"
+               BlueprintName = "FuturifyTests"
+               ReferencedContainer = "container:Futurify.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "futurify.app"
-            BlueprintName = "futurify"
-            ReferencedContainer = "container:futurify.xcodeproj">
+            BuildableName = "Futurify.app"
+            BlueprintName = "Futurify"
+            ReferencedContainer = "container:Futurify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "futurify.app"
-            BlueprintName = "futurify"
-            ReferencedContainer = "container:futurify.xcodeproj">
+            BuildableName = "Futurify.app"
+            BlueprintName = "Futurify"
+            ReferencedContainer = "container:Futurify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
